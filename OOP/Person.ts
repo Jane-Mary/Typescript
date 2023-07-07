@@ -79,3 +79,32 @@ class School{
 
 //Access Modifiers
 //Private, Public, Protected, Static, Abstract, Readonly
+class Student {
+    public name: string = '';
+    public age: number = 0  
+  private bankAccountNum: number = 0
+  public readonly AccountBalance = 250000;
+
+  setAccountNumber(accntNum:number){
+    this.bankAccountNum = accntNum
+  }
+
+  private setAccountCode(){
+    this.bankAccountNum = +123
+  }
+}
+
+let mike = new Student()
+mike.name
+mike.age
+//mike.bankAccountNum
+mike.setAccountNumber(29292929292929)
+//mike.setAccountNumber => errors out
+
+//Inheritance
+class Dog extends Animal {
+    //Dog is the child while animal is the parent class
+    constructor(name: string, age: number){
+        super(name,age) //This will invoke the constructor of the parent class
+    }
+}
